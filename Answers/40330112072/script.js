@@ -101,20 +101,20 @@ function exhanoi_4(A, B, C, D, n) {
 function exhanoi_5(A, B, C, D, n) {
     if(n == 1){
         moves.push([A, D]);
-        hanoi(C, A, D, B, 3);
-        hanoi(B, C, D, A, 5);
+        hanoi(C, D, B, 3);
+        hanoi(B, D, A, 5);
         moves.push([D, C]);
-        hanoi(A, C, D, B, 5);
-        hanoi(B, A, D, C, 5);
+        hanoi(A, D, B, 5);
+        hanoi(B, D, C, 5);
     }
     else{
         exhanoi_5(A, B, C, D, n-1);
         moves.push([A, D]);
-        hanoi(C, A, D, B, 6*n - 3);
-        hanoi(B, C, D, A, 6*n - 1);
+        hanoi(C, D, B, 6*n - 3);
+        hanoi(B, D, A, 6*n - 1);
         moves.push([D, C]);
-        hanoi(A, C, D, B, 6*n - 1);
-        hanoi(B, A, D, A, 6*n - 1);
+        hanoi(A, D, B, 6*n - 1);
+        hanoi(B, D, C, 6*n - 1);
     }
 }
 
